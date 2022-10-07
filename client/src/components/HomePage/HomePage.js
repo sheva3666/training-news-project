@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Filters from "../common/Filters/Filters";
 import News from "../News/News";
 import { useStyles } from "./style";
 import useSearch from "../../hooks/useSearch";
 import { gql, useQuery } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 
 const GET_FILTERED_NEWS = gql`
   query Query($section: String!) {
@@ -22,11 +23,17 @@ const GET_FILTERED_NEWS = gql`
   }
 `;
 
-const HomePage = ({ searchInput }) => {
-  const [currentCategory, setCurrentCategory] = useState({ section: "home" });
+const HomePage = ({ searchInput, category }) => {
+  const [currentCategory, setCurrentCategory] = useState({
+    section: "home",
+  });
   const { data, loading, error } = useQuery(GET_FILTERED_NEWS, {
     variables: { section: currentCategory.section },
   });
+
+  useEffect(() => {
+    setCurrentCategory({ section: category });
+  }, []);
 
   const [filteredNews] = useSearch(data, searchInput);
 

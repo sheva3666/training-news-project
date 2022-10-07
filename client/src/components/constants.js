@@ -21,4 +21,25 @@ export const FiltersNames = [
   "world",
 ];
 
+export const ROUTES = [
+  "home",
+  "arts",
+  "automobiles",
+  "books",
+  "business",
+  "fashion",
+  "health",
+  "food",
+  "insider",
+  "movies",
+  "obituaries",
+  "opinion",
+  "politics",
+  "science",
+  "sports",
+  "technology",
+  "upshot",
+  "world",
+];
+
 export default linksCategories;

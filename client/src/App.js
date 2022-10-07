@@ -9,6 +9,7 @@ import GlobalSearch from "./components/GlobalSearch/GlobalSearch";
 import HomePage from "./components/HomePage/HomePage";
 import Header from "./components/common/Header/Header";
 import Footer from "./components/common/Footer/Footer";
+import { ROUTES, FiltersNames } from "./components/constants";
 
 import { gql, useQuery } from "@apollo/client";
 
@@ -32,7 +33,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <Header onSearch={setSearchInput} />
       <Routes>
-        <Route path={"/"} element={<HomePage searchInput={searchInput} />} />
+        {ROUTES.map((path) => (
+          <Route
+            path={`/${path === "home" ? "" : path}`}
+            key={path}
+            element={<HomePage category={path} searchInput={searchInput} />}
+          />
+        ))}
         <Route path={"/globalSearch"} element={<GlobalSearch />} />
       </Routes>
       <Footer text={footerText} loading={footerLoading} error={footerError} />
