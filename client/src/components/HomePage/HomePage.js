@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Filters from "../common/Filters/Filters";
 import News from "../News/News";
 import { useStyles } from "./style";
 import useSearch from "../../hooks/useSearch";
 import { gql, useQuery } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
+import useTouggleCategories from "../../hooks/useTouggleCategories";
 
 const GET_FILTERED_NEWS = gql`
   query Query($section: String!) {
@@ -24,24 +24,18 @@ const GET_FILTERED_NEWS = gql`
 `;
 
 const HomePage = ({ searchInput, category }) => {
-  const [currentCategory, setCurrentCategory] = useState({
-    section: "home",
-  });
+  const { onChangeCategory, currentCategory } = useTouggleCategories();
   const { data, loading, error } = useQuery(GET_FILTERED_NEWS, {
     variables: { section: currentCategory.section },
   });
 
   useEffect(() => {
-    setCurrentCategory({ section: category });
+    onChangeCategory(category);
   }, []);
 
   const [filteredNews] = useSearch(data, searchInput);
 
   const classes = useStyles();
-
-  const onChangeCategory = (name) => {
-    setCurrentCategory({ ...currentCategory, section: name });
-  };
 
   return (
     <div className={classes.container}>

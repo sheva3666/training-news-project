@@ -9,7 +9,7 @@ const Filters = ({ onChangeCategory }) => {
 
   const onChooseCategory = (name) => {
     onChangeCategory(name);
-    navigate(`/${name}`);
+    navigate(`/${name === "home" ? "" : name}`);
   };
 
   return (

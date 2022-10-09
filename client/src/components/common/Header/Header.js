@@ -2,8 +2,10 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useStyles } from "./style";
 import linksCategories from "../../constants";
+import useTouggleCategories from "../../../hooks/useTouggleCategories";
 
 const Header = ({ onSearch }) => {
+  const { onChooseCategory } = useTouggleCategories();
   const classes = useStyles();
   const handleChange = (value) => {
     onSearch(value);
@@ -11,7 +13,11 @@ const Header = ({ onSearch }) => {
 
   return (
     <div className={classes.header}>
-      <Link className={classes.navLogo} to={"/"}>
+      <Link
+        onClick={() => onChooseCategory("home")}
+        className={classes.navLogo}
+        to={"/"}
+      >
         <h6>News</h6>
       </Link>
 
