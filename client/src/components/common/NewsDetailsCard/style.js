@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   description: {
     maxWidth: "400px",
     paddingBottom: "10px",
-    cursor: "pointer",
   },
 
   time: {
@@ -25,13 +24,14 @@ const useStyles = makeStyles((theme) => ({
     padding: "05px 10px",
     border: `1px solid ${theme.colors.secondary.main}`,
     borderRadius: "20px",
-    background: theme.colors.secondary.main,
-    color: theme.colors.primary.main,
+    background: theme.colors.primary.main,
+    color: theme.colors.secondary.main,
+    cursor: "pointer",
 
     transition: "0,2s",
     "&:hover": {
-      background: theme.colors.primary.main,
-      color: theme.colors.secondary.main,
+      background: theme.colors.secondary.main,
+      color: theme.colors.primary.main,
     },
   },
 

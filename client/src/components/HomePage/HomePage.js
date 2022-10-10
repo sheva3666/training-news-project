@@ -13,11 +13,13 @@ const GET_FILTERED_NEWS = gql`
       results {
         section
         updated_date
+        url
+        title
         multimedia {
           url
         }
+        byline
         abstract
-        title
       }
     }
   }

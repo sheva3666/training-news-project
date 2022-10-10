@@ -3,11 +3,11 @@ import Image from "../Image/Image";
 import SecondTitle from "../SecondTitle/SecondTitle";
 import useStyles from "./style";
 
-const NewsCard = ({ news }) => {
+const NewsDetailsCard = ({ news }) => {
   const classes = useStyles();
   const image = !news.multimedia
     ? ""
-    : news.multimedia !== null && news.multimedia[1];
+    : news.multimedia !== null && news.multimedia[0];
   return (
     <div className={classes.newsCard}>
       <Image image={image} />
@@ -18,12 +18,11 @@ const NewsCard = ({ news }) => {
         <p>{news.abstract}</p>
 
         <div className={classes.urlContainer}>
-          {news.web_url && (
-            <a href={news.web_url} className={classes.url}>
-              Go to source
-            </a>
-          )}
+          <a href={news.url} className={classes.url}>
+            Go to source
+          </a>
         </div>
+        <p>The article has been published: {news.byline}</p>
         <p className={classes.time}>
           Posted:
           {news.updated_date
@@ -35,4 +34,4 @@ const NewsCard = ({ news }) => {
   );
 };
 
-export default NewsCard;
+export default NewsDetailsCard;
