@@ -34,7 +34,6 @@ const HomePage = ({ searchInput, category }) => {
   }, []);
 
   const [filteredNews] = useSearch(data, searchInput);
-
   const classes = useStyles();
 
   return (

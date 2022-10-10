@@ -20,6 +20,7 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "25px",
     textTransform: "uppercase",
     textDecoration: "none",
+    cursor: "pointer",
   },
 
   search: {

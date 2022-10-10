@@ -1,16 +1,9 @@
 import React from "react";
 import { useStyles } from "./style";
 import { FiltersNames } from "../../constants";
-import { useNavigate } from "react-router-dom";
 
 const Filters = ({ onChangeCategory }) => {
   const classes = useStyles();
-  const navigate = useNavigate();
-
-  const onChooseCategory = (name) => {
-    onChangeCategory(name);
-    navigate(`/${name === "home" ? "" : name}`);
-  };
 
   return (
     <div className={classes.container}>
@@ -18,7 +11,7 @@ const Filters = ({ onChangeCategory }) => {
         return (
           <div
             key={name}
-            onClick={() => onChooseCategory(name)}
+            onClick={() => onChangeCategory(name)}
             className={classes.filter}
           >
             {name}

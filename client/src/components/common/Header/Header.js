@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useStyles } from "./style";
-import linksCategories from "../../constants";
+import { linksCategories } from "../../constants";
 import useTouggleCategories from "../../../hooks/useTouggleCategories";
 
 const Header = ({ onSearch }) => {
