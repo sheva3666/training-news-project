@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button, Box, Fade, Backdrop } from "@material-ui/core";
+import { Modal, Box, Fade } from "@material-ui/core";
 import NewsDetailsCard from "../NewsDetailsCard/NewsDetailsCard";
 import { useStyles } from "./style";
 

@@ -5,6 +5,7 @@ import { useStyles } from "./style";
 import useSearch from "../../hooks/useSearch";
 import { gql, useQuery } from "@apollo/client";
 import useTouggleCategories from "../../hooks/useTouggleCategories";
+import BackToTopButton from "../common/BackToTopButton/BackToTopButton";
 
 const GET_FILTERED_NEWS = gql`
   query Query($section: String!) {
@@ -51,6 +52,7 @@ const HomePage = ({ searchInput, category }) => {
           newsError={error}
         />
       </div>
+      <BackToTopButton />
     </div>
   );
 };

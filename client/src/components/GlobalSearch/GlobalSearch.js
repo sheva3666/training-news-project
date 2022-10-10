@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "../common/Form/Form";
 import News from "../News/News";
+import BackToTopButton from "../common/BackToTopButton/BackToTopButton";
 import { useStyles } from "./style";
 import { gql, useQuery } from "@apollo/client";
 
@@ -38,6 +39,7 @@ const GlobalSearch = () => {
         loadinNews={loading}
         newsError={error}
       />
+      <BackToTopButton />
     </div>
   );
 };
