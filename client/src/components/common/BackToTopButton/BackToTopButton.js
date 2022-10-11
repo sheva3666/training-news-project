@@ -8,13 +8,14 @@ const BackToTopButton = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 200 ? setOnTop(true) : setOnTop(false);
+      window.scrollY > 400 ? setOnTop(true) : setOnTop(false);
     });
   }, []);
 
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
+      behavior: "smooth",
     });
   };
 

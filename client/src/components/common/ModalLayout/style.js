@@ -14,5 +14,6 @@ export const useStyles = makeStyles((theme) => ({
     color: theme.colors.primary.main,
     transition: "0.5s",
     overflow: "auto",
+    padding: "20px",
   },
 }));
