@@ -14,9 +14,6 @@ const NewsCard = ({ news }) => {
 
       <div className={classes.description}>
         <SecondTitle title={news.title ? news.title : news.headline.main} />
-
-        <p>{news.abstract}</p>
-
         <div className={classes.urlContainer}>
           {news.web_url && (
             <a href={news.web_url} className={classes.url}>
