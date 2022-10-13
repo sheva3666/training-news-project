@@ -13,6 +13,7 @@ const News = ({ currentNews, loadinNews, newsError, currentCategory }) => {
 
   useEffect(() => {}, [currentCategory]);
 
+  // open modal window with details info
   const onOpenDetails = (news) => {
     setOpenModal(true);
     setNewsDetails(news);

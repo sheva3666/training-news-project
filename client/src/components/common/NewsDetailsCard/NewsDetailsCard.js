@@ -5,6 +5,7 @@ import useStyles from "./style";
 
 const NewsDetailsCard = ({ news }) => {
   const classes = useStyles();
+  // get news only with images and choose which one we need
   const image = !news.multimedia
     ? ""
     : news.multimedia !== null && news.multimedia[0];

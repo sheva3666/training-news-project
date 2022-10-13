@@ -5,6 +5,7 @@ const Form = ({ setSearchItem }) => {
   const [searchText, setSearchText] = useState("");
   const classes = useStyles();
 
+  // get search value and clean input
   const onSubmit = (e) => {
     e.preventDefault();
     setSearchItem(searchText);

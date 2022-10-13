@@ -15,5 +15,6 @@ export const useStyles = makeStyles((theme) => ({
     transition: "0.5s",
     overflow: "auto",
     padding: "20px",
+    borderRadius: "10px",
   },
 }));
